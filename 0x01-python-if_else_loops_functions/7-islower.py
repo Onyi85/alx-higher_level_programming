@@ -4,5 +4,5 @@ def islower(c):
     uppercase = list(range(65, 91))
     if ord(c) in lowercase:
         return True
-    elise:
+    else:
         return False
