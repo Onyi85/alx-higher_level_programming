@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+class LockedClass:
+
+    __class__= "first_name"
+
+    def __init__(self, first_name=none):
+        self. first_name = first_name
