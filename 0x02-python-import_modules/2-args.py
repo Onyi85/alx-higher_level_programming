@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-# _ _ _ A program that prints the number of and the list of its arguments
+# _ _ _ THIS PROJECT SHOWS HOW TO WORK WITH COMMANDLINE ARGUMENTS
 if __name__ == "__main__":
     import sys
 
+    # _ _ _ _TOTAL ARGUMENTS = total - name of program(1)
     n = len(sys.argv) - 1
     # _ _ _ CHECK IF N IS 0, 1 OR > 1
     if n == 0:
