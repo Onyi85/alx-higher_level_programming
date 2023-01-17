@@ -1,0 +1,82 @@
+- - - - - - ALX SOFTWARE ENGINEERING - - - -
+
+FILENAME: tests/5-text_indentation.txt
+
+FOR: 5-text_indentation.py
+
+IMPORTING MODULE: 
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+1. Correct output
+
+
+>>> text_indentation("Holberton.")
+Holberton.
+<BLANKLINE>
+
+2. Test when a float is passed
+
+
+>>> text_indentation(23.4)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+3. Test when an int is passed
+
+>>> text_indentation(23)
+Traceback (most recent call last):
+        ...
+TypeError: text must be a string
+
+
+4. Test for an no argument
+
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+5. Test for None argument
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+6. Test for tuple as argument
+
+>>> text_indentation((4, 3))
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+
+7. Test for float('inf'/'nan')
+
+>>> text_indentation(float('inf'))
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+>>> text_indentation(float('nan'))
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+8: Test for empty string
+
+>>> text_indentation("")
+
+9: Test for when 3 arguments are given instead of 1
+
+>>> text_indentation("ble", "ooh", "wah")
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() takes 1 positional argument but 3 were given
+
