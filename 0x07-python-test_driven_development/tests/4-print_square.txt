@@ -1,0 +1,77 @@
+- - - - ALX SOFTWARE ENGINEERING - - - - 
+
+FILENAME: tests/4-print_square.txt
+
+FOR: 4-print_square.py
+
+IMPORTING MODULE: 
+>>> print_square = __import__('4-print_square').print_square
+
+1. Correct Input
+>>> print_square(4)
+####
+####
+####
+####
+
+2. Size < 0
+>>> print_square(-1)
+Traceback (most recent call last):
+	...
+ValueError: size must be >= 0
+
+
+3. Size is float and < 0
+
+>>> print_square(-1.5)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+4. Size is float 
+
+>>> print_square(5.5)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+5. Size is string
+
+>>> print_square('julius')
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+6. Size is empty
+
+>>> print_square()
+Traceback (most recent call last):
+	...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+
+7. Size is None
+
+>>> print_square(None)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+8. Size is float('inf')
+
+>>> print_square(float('inf'))
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+9. Size is float('nan')
+
+>>> print_square(float('nan'))
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
