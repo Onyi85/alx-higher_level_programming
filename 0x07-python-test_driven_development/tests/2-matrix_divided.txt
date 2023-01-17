@@ -1,0 +1,162 @@
+This file extends our previous knowledge of interactive testing
+
+	How the function works:
+
+This function only divides element of a list and return the quotient
+in floats. 
+
+The following test has been done:
+	Test to see if either list or nested list is empty
+	Test to see if either list or nested list is a list
+	Test to see if their length are equal
+	Test to see if only int and float are the divisor
+	Test to see that divisor should not be zero
+
+Invoking and calling the function 
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test to see when a string is passed in the nested list
+
+>>> matrix = [
+...     [2, 'Benjamin', 8],
+...     [9, 5, 3]
+... ]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 31, in matrix_divided
+    raise TypeError(repeated_msg)
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+_________________________________
+Test to see when we decided to divide by zero
+
+>>> matrix = [
+...     [2, 4, 6],
+...     [2, 1, 6]
+... ]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 45, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+
+
+_________________________________
+Test to see when we pass a string as our divisor
+>>> matrix = [
+...     [2, 4, 6],
+...     [2, 1, 6]
+... ]
+>>> matrix_divided(matrix, 'Benjamin')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 42, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+
+
+_________________________________
+Test to see when we pass in a tuple instead of a list
+
+>>> matrix = (
+...	(3, 4),
+...	(4, 9)
+... )
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 27, in matrix_divided
+    raise TypeError(repeated_msg)
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+_________________________________
+Test to see when we passed in the correct output
+
+>>> matrix = [
+...  [1, 2, 3],
+...  [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+_________________________________
+Test to see when a negative number is passed to div
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [
+...     [3, 9], [12, 15]
+... ]
+>>> matrix_divided(matrix, -3)
+[[-1.0, -3.0], [-4.0, -5.0]]
+
+
+_________________________________
+Test of list of lists of integers with one float(inf/nan) and an int
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> infini_te = [
+...     [float('inf'), 5, 7],
+...     [8, 9, float('nan')]
+... ]
+>>> matrix_divided(infini_te, 3)
+[[inf, 1.67, 2.33], [2.67, 3.0, nan]]
+
+
+_________________________________
+Test list of lists of integers by float infinity div
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> infini_te = [
+...     [3, 5, 6],
+...     [7, 9, 2]
+... ]
+>>> matrix_divided(infini_te, float('inf'))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+
+_________________________________
+Test list of lists of integers with one float(inf/nan)/float(inf/nan)
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> infini_te = [
+...     [3, 5, float('nan')],
+...     [4, 6, 7]
+... ]
+>>> matrix_divided(infini_te, float('nan'))
+[[nan, nan, nan], [nan, nan, nan]]
+
+
+_________________________________
+Test list of lists of integers with one float(inf/nan)
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> infini_te = [
+...     [3, 5, float('inf')],
+...     [4, 6, 7]
+... ]
+>>> matrix_divided(infini_te, float('inf'))
+[[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+
+
+_________________________________
+Test the list of different length
+
+>>> diff_len = [[1,3,3,3], [3,5,1,2,5], [2,5,8]]
+>>> matrix_divided(diff_len, 3)
+Traceback (most recent call last):
+	...
+TypeError: Each row of the matrix must have the same size
+
+
+Test if no arguments was passed
+
+>>> diff_len = [[1,3,3,3], [3,5,1,2,5], [2,5,8]]
+>>> matrix_divided()
+Traceback (most recent call last):
+	...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'divided'
