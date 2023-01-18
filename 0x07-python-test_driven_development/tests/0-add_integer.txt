@@ -27,20 +27,41 @@ Shell commands to test our function:
 Now calling the function:
 
 
-if you pass in two ints, it will just add and return
+if you pass in two ints, it would just add and return them
 >>> add_integer(1, 2)
 3
 
 
 
-if you pass in two ints, it would just add and return
+if you pass in two ints, it would just add and return them
 >>> add_integer(100, -2)
 98
 
 
 
-if you pass in only value for a, then that value will be added to 98
+if you pass in only a value for a, then that value would be added to 98
 >>> add_integer(2)
+100
+
+
+
+if you pass in one int and one float, it would convert the
+float to an int and adds and returns then.
+>>> add_integer(100.3, -2)
+98
+
+
+
+if you pass in two float numbers, then we would convert to int
+                before actually adding them.
+>>> add_integer(2.3, 2.7)
+4
+
+
+if you pass only a float value, then it would be converted to it, and
+added for the value of b
+
+>>> add_integer(2.5)
 100
 
 
@@ -51,13 +72,42 @@ if you pass in a string, then it would throw a TypeError.
 >>> add_integer(4, "School")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 13, in add_integer
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 11, in add_integer
     raise TypeError("b must be an integer")
 TypeError: b must be an integer
 
 
+if you pass in two strings, then it would throw a TypeError.
 
-if you pass in a float infinity, then it would throw a overflowerror
+>>> add_integer("hello", "School")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 9, in add_integer
+    raise TypeError("a must be an integer")
+TypeError: a must be an integer
+
+
+if you pass in a None value for a, then it would throw a TypeErr
+or.
+>>> add_integer(None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 9, in add_integer
+    raise TypeError("a must be an integer")
+TypeError: a must be an integer
+
+
+
+if you pass in two None values, then it would throw a TypeError
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 9, in add_integer
+    raise TypeError("a must be an integer")
+TypeError: a must be an integer
+
+if you pass in a float infinity, then it would throw an overflowerror
 
 >>> add_integer(float('inf'))
 Traceback (most recent call last):
@@ -65,3 +115,23 @@ Traceback (most recent call last):
   File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 15, in add_integer
     a = int(a)
 OverflowError: cannot convert float infinity to integer
+
+if you pass in nan, then it would throw ValueError
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 15, in add_integer
+    a = int(a)
+ValueError: cannot convert float NaN to integer
+
+
+if you pass in nan and an int, it would throw a ValueError
+
+>>> add_integer(float('inf'), -5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 15, in add_integer
+    a = int(a)
+OverflowError: cannot convert float infinity to integer
+
