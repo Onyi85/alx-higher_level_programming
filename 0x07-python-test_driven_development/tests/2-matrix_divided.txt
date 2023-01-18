@@ -18,7 +18,7 @@ Invoking and calling the function
 Test to see when a string is passed in the nested list
 
 >>> matrix = [
-...     [2, 'Benjamin', 8],
+...     [2, 'julius', 8],
 ...     [9, 5, 3]
 ... ]
 >>> matrix_divided(matrix, 3)
@@ -50,7 +50,7 @@ Test to see when we pass a string as our divisor
 ...     [2, 4, 6],
 ...     [2, 1, 6]
 ... ]
->>> matrix_divided(matrix, 'Benjamin')
+>>> matrix_divided(matrix, 'julius')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 42, in matrix_divided
@@ -159,4 +159,24 @@ Test if no arguments was passed
 >>> matrix_divided()
 Traceback (most recent call last):
 	...
-TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'divided'
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+
+Test if one arguments was passed
+
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> diff_len = [[1,3,3,3], [3,5,1,2,5], [2,5,8]]
+>>> matrix_divided(diff_len)
+Traceback (most recent call last):
+	...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test if only one nested list with one item is passed
+
+>>> matrix = [
+...     [3]
+... ]
+>>> matrix_divided(matrix, 3)
+[[1.0]]
+
