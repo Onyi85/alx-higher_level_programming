@@ -5,6 +5,6 @@
 def read_file(filename=""):
     """ This function reads the entire content of a file"""
     if filename:
-        with open(filename, 'r', encoding='utf-8') as file_object:
-            contents = file_object.read()
-            print(contents, end='')
+        with open(filename, 'r', encoding='utf-8') as fp:
+            text = fp.read()
+            print(text, end='')

@@ -6,5 +6,5 @@ def write_file(filename="", text=""):
     """ This function writes to a file"""
     if filename:
         if text:
-            with open(filename, 'w', encoding='utf-8') as file_object:
-                return (file_object.write(text))
+            with open(filename, 'w', encoding='utf-8') as fp:
+                return (fp.write(text))

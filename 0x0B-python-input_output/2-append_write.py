@@ -6,5 +6,5 @@ def append_write(filename="", text=""):
     """This function writes to a file without deleting its content"""
     if filename:
         if text:
-            with open(filename, 'a', encoding="utf-8") as file_object:
-                return(file_object.write(text))
+            with open(filename, 'a', encoding="utf-8") as fp:
+                return(fp.write(text))
